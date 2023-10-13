@@ -1,6 +1,7 @@
-public class NewsfeedDatail {
+public class NewsfeedDetail {
 	@AuraEnabled(cacheable=true)
-    public static List<newsDetails> getnews(Integer offset) {  
+    public static List<newsDetails> getnews(Integer offset, string country) {  
+        system.debug(country);
         system.debug(offset);
         DateTime todaysDate = System.today();
         String todaysDateStr = todaysDate.format('yyyy-MM-dd');
@@ -14,7 +15,7 @@ public class NewsfeedDatail {
    	 
     	HttpRequest request = new HttpRequest();
         request.setTimeout(60000);
-   		request.setEndpoint('http://api.mediastack.com/v1/news?access_key=3985336729bcecb11875c150bfb0d31c&languages=en&countries=in&limit=1&offset='+offset+'&date='+todaysDateStr);    	
+   		request.setEndpoint('http://api.mediastack.com/v1/news?access_key=3985336729bcecb11875c150bfb0d31c&languages=en&countries='+country+'&limit=1&offset='+offset+'&date='+todaysDateStr);    	
     	request.setMethod('GET');
    	 
     	HttpResponse response = h.send(request);
