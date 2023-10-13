@@ -1,0 +1,32 @@
+.imgsize{			
+	position: absolute;
+    left: 78%;
+	top : 18%;
+	outline: none;
+	border: none;
+	width: 180px;
+  	height : 180px;
+	/*width:500 ;
+	height:600;*/
+}
+
+.setDatetime{
+	position: absolute;
+    left: 84%;
+	Top : 5%;
+	foreground-color: rgb(1, 255, 1);
+}
+
+
+.titlesize{ 
+	font-size: 18px;
+}
+
+
+
+
+.fromsize{
+	
+	font-size: 15px;
+	top: 15%;
+}
