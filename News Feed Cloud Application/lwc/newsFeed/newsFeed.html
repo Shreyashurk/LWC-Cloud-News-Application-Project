@@ -1,4 +1,3 @@
-
 <template>
     <lightning-card title="News Feed" icon-name="standard:account">
         <div if:true= {fetchNews}>
@@ -43,9 +42,9 @@
                             </span>
                         </div>
 
-                        <div class="slds-col slds-size_2-of-12 setDatetime" style="color:#19FB02">
+                        <div class="slds-col slds-size_2-of-12 setDatetime" style="color:#800080">
                             <span>
-                                 <span>{weat.dates}</span>
+                                 <span><b>{weat.dates}</b></span>
                             </span>
                         </div>
 
@@ -55,12 +54,27 @@
             </template>              
         </div>       
        
-       <div class="slds-p-left_medium">
-           <div class="slds-p-top_large">
-                <lightning-button variant="Neutral" label="Click To More " title="titleName" onclick={handleClick}>
-                </lightning-button>
-           </div>
+       <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_2-of-12">
+                <span>
+                    <div class="slds-p-left_medium">
+                        <div class="slds-p-top_large">
+                                <lightning-button variant="Neutral" label="Click To More " title="titleName" onclick={handleClick}>
+                                </lightning-button>
+                        </div>
+                    </div>
+                </span>
+            </div>
+            <div class="slds-col slds-size_2-of-12">
+                <span>
+                   <div class="slds-p-left_medium">
+                        <div class="slds-p-top_xx-small">
+                            <lightning-combobox class="country" placeholder="Select Country" value={value} onchange={handleChange} options={statusOptions}>
+                            </lightning-combobox>
+                       </div>
+                    </div>
+                </span>
+            </div>
        </div>
-       
     </lightning-card>
 </template>
